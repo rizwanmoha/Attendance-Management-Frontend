@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+
+
+
+.h2{
+    
+    margin: 0;
+    font-family:"Cambria";
+    font-size: 2rem;
+    text-transform: capitalize;
+    padding-left: 2rem;
+    padding-top:2rem;
+    -ms-flex-align: start;
+    padding-bottom: 3rem;
+    display: flex;
+    
+}
+
+.h3{
+    
+    font-family: "Cambria";
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    -ms-flex-align: start;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+
+
+}
+
+
+
+
+
+ul{
+    padding-left: 4rem;
+    font-size:1.5rem;
+    padding-bottom: 2rem;
+}
+
+ol{
+    padding-left: 4rem;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+
+}
+
+
+
+
+
+
+.h4{
+       font-size: 1.6rem;
+       font-family:"Cambria" ;
+       padding-left: 2rem;
+       text-transform: capitalize;
+       padding-bottom: 2rem;
+       
+}
+.h5{
+    font-size: 1.5rem;
+    font-family:"Cambria" ;
+    padding-left: 2rem;
+    text-transform: capitalize;
+    padding-top: 1.5rem;
+}
+
+.h6{
+    font-size: 1.4rem;
+    font-family:"Cambria" ;
+    padding-left: 2rem;
+    text-transform: capitalize;
+    padding-top: 1rem;
+
+}
+
+.p{
+    font-size:1.5rem;
+    padding-left: 2.6rem;
+    padding-bottom: 1.2rem;
+    
+}

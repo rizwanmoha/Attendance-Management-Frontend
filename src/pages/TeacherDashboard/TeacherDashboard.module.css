@@ -1,0 +1,39 @@
+.addclass button{
+    color: white;
+    background-color: #14213D;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 1.25rem ;
+}
+.addclass button:hover{
+    background-color: #14213D;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    transition: 0.5s;
+    border-radius: 1.25rem ;
+}
+
+.classes {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.qrResult {
+    font-size: 1.5rem;
+    margin-left: 12px;
+}
+
+.qrButton {
+    background-color: #14213D;
+    color: white;
+    padding: 0.5rem;
+    /* width:80%; */
+    font-size: larger;
+    border-radius: 0.6rem;
+}
