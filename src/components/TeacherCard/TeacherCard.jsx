@@ -37,9 +37,7 @@ function TeacherCard(props) {
 
   const generateQrCode = async () => {
     console.log("test");
-    const res = await axios.get("/auth/generateQrCode/" + props.id, {
-      withCredentials: true
-    })
+    const res = await axios.get("http://localhost:5000/auth/generateQrCode/" + props.id)
     console.log(res);
     if(res.status === 200) {
       if(res.data.success === true) {
@@ -89,7 +87,7 @@ function TeacherCard(props) {
   const addStudent = async (email) => {
     try {
       
-      const res = await axios.post("/auth/addStudent/" + props.id,{
+      const res = await axios.post("http://localhost:5000/auth/addStudent/" + props.id,{
         studentEmail:email,
         withCredentials: true
       })
@@ -140,7 +138,7 @@ function TeacherCard(props) {
   const addTeacher = async (email) => {
     try {
       
-      const res = await axios.post("/auth/addTeacher/" + props.id,{
+      const res = await axios.post("http://localhost:5000/auth/addTeacher/" + props.id,{
         teacherEmail:email
       })
       
@@ -190,7 +188,7 @@ function TeacherCard(props) {
       let formData = new FormData();
       formData.append("teachers",teachers)
 
-      const res = await axios.post(`/auth/addTeachers/${props.id}`,formData, {
+      const res = await axios.post(`http://localhost:5000/auth/addTeachers/${props.id}`,formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -222,7 +220,7 @@ function TeacherCard(props) {
 
       formData.append("students",students)
 
-      const res = await axios.post(`/auth/addStudents/${props.id}`,formData, {
+      const res = await axios.post(`http://localhost:5000/auth/addStudents/${props.id}`,formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -272,7 +270,7 @@ function TeacherCard(props) {
         return;
       }
 
-      const res = await axios.post(`/auth/removeStudent/${props.id}`,{
+      const res = await axios.post(`http://localhost:5000/auth/removeStudent/${props.id}`,{
         email: stdEmail
       })
 
@@ -302,7 +300,7 @@ function TeacherCard(props) {
         return;
       }
 
-      const res = await axios.post(`/auth/removeTeacher/${props.id}`,{
+      const res = await axios.post(`http://localhost:5000/auth/removeTeacher/${props.id}`,{
         email: tEmail
       })
 

@@ -14,7 +14,7 @@ const createInstance = async () => {
             }
         })  
 
-        const res = await axios.get("/api/getStudents")
+        const res = await axios.get("http://localhost:5000/api/getStudents")
 
         const ins = await insertMultiple(db,res.data.data)
 

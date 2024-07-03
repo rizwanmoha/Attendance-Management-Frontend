@@ -144,7 +144,7 @@ function Profile() {
                 cn_password: inpVal.rpass,
             }
 
-            const res = await axios.post("/user/update",userObj);
+            const res = await axios.post("http://localhost:5000/user/update",userObj);
 
             dispatch(loadingActions.hideLoading());
             

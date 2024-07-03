@@ -16,7 +16,7 @@ function Navbar(props) {
     const logoutHandler = async () => {
 
         try{
-            const res = await axios.get("/user/logout", {
+            const res = await axios.get("http://localhost:5000//user/logout", {
                 withCredentials: true
             })
             toast.success(res.data.message)
@@ -38,7 +38,7 @@ function Navbar(props) {
                     <Link to = "/">
 
                         <i className ="fa-brands fa-sketch"></i>
-                        {/* <h2>Group 27</h2> */}
+                        
                     </Link>
                 </li>
                 <li>

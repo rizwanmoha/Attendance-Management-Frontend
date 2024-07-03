@@ -49,10 +49,10 @@ function AdminDashboard() {
 
             dispatch(loadingActions.showLoading())
 
-            const crs = await axios.get("/api/getClasses")
-            const stds = await axios.get("/api/getStudents")
-            const teach = await axios.get("/api/getTeachers")
-            const adm = await axios.get("/api/getAdmins")
+            const crs = await axios.get("http://localhost:5000/api/getClasses")
+            const stds = await axios.get("http://localhost:5000/api/getStudents")
+            const teach = await axios.get("http://localhost:5000/api/getTeachers")
+            const adm = await axios.get("http://localhost:5000/api/getAdmins")
 
             dispatch(loadingActions.hideLoading())
 
@@ -201,7 +201,7 @@ function AdminDashboard() {
             
             const std = students[idx];
 
-            const res = await axios.get("/admin/removeStudent/" + std._id)
+            const res = await axios.get("http://localhost:5000/admin/removeStudent/" + std._id)
 
             if(res.data.success){
                 toast.success("Student removed")
@@ -224,7 +224,7 @@ function AdminDashboard() {
             
             const teach = teachers[idx];
 
-            const res = await axios.get("/admin/removeTeacher/" + teach.email)
+            const res = await axios.get("http://localhost:5000/admin/removeTeacher/" + teach.email)
 
             if(res.data.success){
                 toast.success("Teacher removed")
@@ -247,7 +247,7 @@ function AdminDashboard() {
             
             const crs = courses[idx];
 
-            const res = await axios.get("/admin/removeCourse/" + crs._id)
+            const res = await axios.get("http://localhost:5000/admin/removeCourse/" + crs._id)
 
             if(res.data.success){
                 toast.success("Course Removed")
@@ -270,7 +270,7 @@ function AdminDashboard() {
             
             const adm = admins[idx];
 
-            const res = await axios.post("/admin/remove",{
+            const res = await axios.post("http://localhost:5000/admin/remove",{
                 id:adm._id
             })
 
@@ -299,7 +299,7 @@ function AdminDashboard() {
             const pass = passRef.current.value;
             const adminPass = admPassRef.current.value;
 
-            const res = await axios.post("/admin/add",{
+            const res = await axios.post("http://localhost:5000/admin/add",{
                 full_name: name,
                 email: email,
                 password: pass,

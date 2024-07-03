@@ -10,7 +10,7 @@ export default function Homenav() {
                     <Link to="/">
                         <img src={logo} alt="Logo here" />
                     </Link>
-                    <Link to="/">Group - 27</Link>
+                    <Link to="/">Attendance Management</Link>
                 </div>
             </div>
             <nav className="main-nav">

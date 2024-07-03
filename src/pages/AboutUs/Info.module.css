@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 
@@ -83,4 +83,140 @@ ol{
     padding-left: 2.6rem;
     padding-bottom: 1.2rem;
     
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --background-color: #f0f3f5;
+  --text-color: #34495e;
+  --card-background: #ffffff;
+  --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.infor {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--card-background);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  line-height: 1.6;
+}
+
+.h2 {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+.h3 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.h4 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.h6 {
+  color: var(--accent-color);
+  font-size: 1rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.paragraph, .p, .ul, .ol {
+  background-color: var(--card-background);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.paragraph:hover, .p:hover, .ul:hover, .ol:hover {
+  box-shadow: var(--hover-shadow);
+}
+
+.ul, .ol {
+  padding-left: 50px;
+}
+
+.ul li, .ol li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .infor {
+    margin: 20px;
+    padding: 30px;
+  }
+
+  .h2 {
+    font-size: 1.75rem;
+  }
+
+  .h3 {
+    font-size: 1.3rem;
+  }
+
+  .h4 {
+    font-size: 1.1rem;
+  }
+
+  .paragraph, .p, .ul, .ol {
+    padding: 15px;
+  }
+
+  .ul, .ol {
+    padding-left: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infor {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+
+  .h3 {
+    font-size: 1.2rem;
+  }
+
+  .h4 {
+    font-size: 1rem;
+  }
+
+  .paragraph, .p, .ul, .ol {
+    padding: 10px;
+  }
+
+  .ul, .ol {
+    padding-left: 25px;
+  }
 }

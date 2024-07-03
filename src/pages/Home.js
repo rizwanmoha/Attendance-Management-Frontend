@@ -67,7 +67,7 @@ function Section2() {
                 </div>
                 <div ref = {ref2} className={`content from_right slide_in slow ${view2? "appear":""}`}>
                     <p>
-                        Group-27 provides a simple and reliable system to take attendance in classNameroom.
+                        We provides a simple and reliable system to take attendance in classNameroom.
                         It Provides teachers with a handful of tools so that the teachers can just focus on delivering
                         quality content to their students , hence improving the teaching - learning process.
                     </p>

@@ -26,12 +26,12 @@ export default function StudentDashboard() {
     const getClasses = async () => {
         try {
             dispatch(loadingActions.showLoading())
-            const res = await axios.get("/api/getClasses", {
-                withCredentials: true
-            })
+            const res = await axios.get("http://localhost:5000/api/getClasses")
             dispatch(loadingActions.hideLoading());
             
             // console.log(res.data);
+            console.log("below one is the data");
+            console.log(res.data.data);
             const temp = res.data.data.filter((cls) => {
                 let ret = false;
                 cls.students.forEach((std) => {

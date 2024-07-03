@@ -108,7 +108,7 @@ function ContactUs(){
                     <Link to="/">
                         <img src={logo} alt="Logo here" />
                     </Link>
-                    <Link to="/">Group - 27</Link>
+                    <Link to="/">Attendance</Link>
                 </div>
             </div>
             <div className={classes.Form}>
