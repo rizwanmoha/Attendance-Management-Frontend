@@ -23,6 +23,7 @@ export default function StudentDashboard() {
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch();
     
+    const roll_Number = localStorage.getItem("roll_no");
     const getClasses = async () => {
         try {
             dispatch(loadingActions.showLoading())
@@ -36,7 +37,7 @@ export default function StudentDashboard() {
                 let ret = false;
                 cls.students.forEach((std) => {
                     // console.log(`std = ${std.roll_number}`);
-                    if(std.roll_number === user.roll_number){
+                    if(std.roll_number === roll_Number){
                         ret = true;
                     }
                 })
@@ -62,7 +63,7 @@ export default function StudentDashboard() {
         
         stdClasses.forEach((cls) => {
             cls.students.forEach((std) => {
-                if(std.roll_number === user.roll_number && cls._id === id){
+                if(std.roll_number === roll_Number && cls._id === id){
                     qrString =  std.qrcode_string;
                 }
             })

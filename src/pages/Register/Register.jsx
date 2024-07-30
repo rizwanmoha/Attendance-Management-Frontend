@@ -249,7 +249,7 @@ const Register=(props)=>{
                     <Link to="/">
                         <img src={logo} alt="Logo here" />
                     </Link>
-                    <Link to="/">Group - 27</Link>
+                    <Link to="/">Attendance Management</Link>
                 </div>
             </div>
             <div className={classes.Form}>

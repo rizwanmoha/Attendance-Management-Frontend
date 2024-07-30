@@ -27,6 +27,7 @@ export default function TeacherDashboard() {
     });
     
     const dispatch = useDispatch();
+    const UserEmail = localStorage.getItem("email");
 
     const getClasses = async () => {
         try {
@@ -39,7 +40,7 @@ export default function TeacherDashboard() {
                 let ret = false;
                 cls.teachers.forEach((std) => {
                     // console.log(`std = ${std.roll_number}`);
-                    if(std.email === user.email){
+                    if(std.email === UserEmail){
                         ret = true;
                     }
                 })

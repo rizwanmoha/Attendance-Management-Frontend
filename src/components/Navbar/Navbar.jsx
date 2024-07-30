@@ -16,11 +16,14 @@ function Navbar(props) {
     const logoutHandler = async () => {
 
         try{
-            const res = await axios.get("http://localhost:5000//user/logout", {
-                withCredentials: true
-            })
-            toast.success(res.data.message)
-            dispatch(userActions.setUser(null))
+            // const res = await axios.get("http://localhost:5000/user/logout")
+            // toast.success(res.data.message)
+            // dispatch(userActions.setUser(null));
+            localStorage.removeItem('role');
+
+
+            localStorage.removeItem('token');
+
             navigate("/")
         }
         catch(err){

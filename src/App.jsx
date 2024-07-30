@@ -23,45 +23,49 @@ import AttendancePage from "./pages/AttendancePage/AttendancePage"
 import {userActions} from "./store/userSlice"
 import {loadingActions} from "./store/loadingSlice"
 
+
+
 function App() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const role = localStorage.getItem('role');
+  const user = useSelector(state => state.user.user.token);
   
-  const getUserData = async () => {
-    try{
+  // const getUserData = async () => {
+  //   try{
       
-      dispatch(loadingActions.showLoading())
-      const res = await axios.get("/api/getCookieDetails")
-      dispatch(loadingActions.hideLoading())
+  //     dispatch(loadingActions.showLoading())
+  //     const res = await axios.get("http://localhost:5000/api/getCookieDetails")
+  //     dispatch(loadingActions.hideLoading())
       
-      // console.log('App.js')
-      // console.log(res.data);
+  //     // console.log('App.js')
+  //     // console.log(res.data);
       
-      if(res.data.success){
-        dispatch(userActions.setUser(res.data.data.user))
-        navigate("/")
-      }
-      else{
-        dispatch(userActions.setUser(null))
-      }
+  //     if(true){
+  //       dispatch(userActions.setUser(res.data.data))
+  //       navigate("/")
+  //     }
+  //     else{
+  //       dispatch(userActions.setUser(null))
+  //     }
 
       
-    }catch(err){
-      console.log("App.js Error");
-      console.log(err)
-      dispatch(loadingActions.hideLoading())
-    }
-  }
+  //   }catch(err){
+  //     console.log("App.js Error");
+  //     console.log(err)
+  //     dispatch(loadingActions.hideLoading())
+  //   }
+  // }
    
-  useEffect(() => {
-    getUserData();
-  },[]); // eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   getUserData();
+  // },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // getUserData();
   
   const loading = useSelector(state => state.loading.loading)
-  const user = useSelector(state => state.user.user)
+  // const user = useSelector(state => state.user.user)
   // setUser(user)
 
   // console.log("In App");
@@ -70,9 +74,9 @@ function App() {
 
   return (
     <>
-      {loading && <Loader/>}
+      {/* {loading && <Loader/>} */}
       <Toaster position="top-center"/>
-      {(user === null) && (
+      {(role === null) && (
           <Routes>
             <Route
               path = "/"
@@ -118,7 +122,7 @@ function App() {
             />
         </Routes>
       )}
-      {(user?.userType === "student") && (
+      {(role === "user") && (
         <Routes>
           <Route
             path = "/"
@@ -164,7 +168,7 @@ function App() {
           />
         </Routes>
       )}
-      {(user?.userType === "admin") && (
+      {(role === "admin") && (
         <Routes>
           <Route
             path = "/"
@@ -204,7 +208,7 @@ function App() {
           />
         </Routes>
       )}
-      {(user?.userType === "teacher") && (
+      {(role === "teacher") && (
         <Routes>
           <Route
             path = "/"

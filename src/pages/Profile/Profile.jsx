@@ -21,11 +21,11 @@ function Profile() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.user)
-    
+
     const [inpVal,setVal]=useState({
-        email: user.email,
+        email: localStorage.getItem('email'),
         pass:"",
-        name: user.name,
+        name: localStorage.getItem('name'),
         rpass: ""
     });
 

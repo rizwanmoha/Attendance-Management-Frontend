@@ -91,8 +91,15 @@ const Login=()=>{
             dispatch(loadingActions.hideLoading());
             
             if(res.data.success){
+                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('email', res.data.user.email);
+                localStorage.setItem('name', res.data.user.name);
+                localStorage.setItem('role', res.data.role);
+                if(res.data.role=="user"){
+                    localStorage.setItem('roll_no', res.data.user.roll_number);
+                }
                 toast.success(res.data.message)
-                dispatch(userActions.setUser(res.data.data))
+                // dispatch(userActions.setUser(res.data.token))
                 navigate("/")
             }
             else{
@@ -123,7 +130,7 @@ const Login=()=>{
                     <Link to="/">
                         <img src={logo} alt="Logo here" />
                     </Link>
-                    <Link to="/">Group - 27</Link>
+                    <Link to="/">Attendance Management</Link>
                 </div>
             </div>
             <div className={classes.center}>
