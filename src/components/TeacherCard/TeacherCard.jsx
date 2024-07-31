@@ -4,7 +4,7 @@ import profile_pic from "../../assets/profile_pic.svg"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import toast from "react-hot-toast"
-// import {URL} from "../../constants/backend"
+import {backendUrl} from "../../backend";
 
 import Modal from '../Modal/Modal'
 import AddStudentModal from '../AddStudentModal/AddStudentModal'
@@ -37,7 +37,7 @@ function TeacherCard(props) {
 
   const generateQrCode = async () => {
     console.log("test");
-    const res = await axios.get("http://localhost:5000/auth/generateQrCode/" + props.id)
+    const res = await axios.get(`${backendUrl}/auth/generateQrCode/` + props.id)
     console.log(res);
     if(res.status === 200) {
       if(res.data.success === true) {
@@ -87,7 +87,7 @@ function TeacherCard(props) {
   const addStudent = async (email) => {
     try {
       
-      const res = await axios.post("http://localhost:5000/auth/addStudent/" + props.id,{
+      const res = await axios.post(`${backendUrl}/auth/addStudent/` + props.id,{
         studentEmail:email,
         withCredentials: true
       })
@@ -138,7 +138,7 @@ function TeacherCard(props) {
   const addTeacher = async (email) => {
     try {
       
-      const res = await axios.post("http://localhost:5000/auth/addTeacher/" + props.id,{
+      const res = await axios.post(`${backendUrl}/auth/addTeacher/` + props.id,{
         teacherEmail:email
       })
       
@@ -188,7 +188,7 @@ function TeacherCard(props) {
       let formData = new FormData();
       formData.append("teachers",teachers)
 
-      const res = await axios.post(`http://localhost:5000/auth/addTeachers/${props.id}`,formData, {
+      const res = await axios.post(`${backendUrl}/auth/addTeachers/${props.id}`,formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -220,7 +220,7 @@ function TeacherCard(props) {
 
       formData.append("students",students)
 
-      const res = await axios.post(`http://localhost:5000/auth/addStudents/${props.id}`,formData, {
+      const res = await axios.post(`${backendUrl}/auth/addStudents/${props.id}`,formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         }
@@ -270,7 +270,7 @@ function TeacherCard(props) {
         return;
       }
 
-      const res = await axios.post(`http://localhost:5000/auth/removeStudent/${props.id}`,{
+      const res = await axios.post(`${backendUrl}/auth/removeStudent/${props.id}`,{
         email: stdEmail
       })
 
@@ -300,7 +300,7 @@ function TeacherCard(props) {
         return;
       }
 
-      const res = await axios.post(`http://localhost:5000/auth/removeTeacher/${props.id}`,{
+      const res = await axios.post(`${backendUrl}/auth/removeTeacher/${props.id}`,{
         email: tEmail
       })
 

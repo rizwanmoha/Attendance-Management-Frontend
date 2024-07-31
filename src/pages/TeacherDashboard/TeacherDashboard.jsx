@@ -3,7 +3,7 @@ import axios from "axios"
 import { useSelector,useDispatch } from "react-redux";
 import QrReader from "react-qr-scanner"
 import toast from "react-hot-toast"
-// import {URL} from "../../constants/backend"
+import {backendUrl} from "../../backend";
 
 import { loadingActions } from "../../store/loadingSlice";
 import Dashboard from '../../components/Dashboard/Dashboard'
@@ -32,7 +32,7 @@ export default function TeacherDashboard() {
     const getClasses = async () => {
         try {
             dispatch(loadingActions.showLoading())
-            const res = await axios.get("http://localhost:5000/api/getClasses")
+            const res = await axios.get(`${backendUrl}/api/getClasses`)
             dispatch(loadingActions.hideLoading());
 
             // console.log(res.data);
@@ -86,7 +86,7 @@ export default function TeacherDashboard() {
     }
 
     const removeCurrClass = async (cid) => {
-        const res = await axios.get("http://localhost:5000/auth/removeClass/" + cid)
+        const res = await axios.get(`${backendUrl}/auth/removeClass/` + cid)
 
         if(res.data.success){
             toast.success("Class removed successfully")
@@ -131,7 +131,7 @@ export default function TeacherDashboard() {
 
         try {
             
-            const res = await axios.post("http://localhost:5000/auth/markAttendance/" + attendance.classId,{
+            const res = await axios.post(`${backendUrl}/auth/markAttendance/` + attendance.classId,{
                 qrCodeArr: attendance.qrString
             })
 

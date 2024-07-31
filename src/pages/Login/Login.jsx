@@ -3,7 +3,7 @@ import axios from "axios"
 import toast from "react-hot-toast"
 import { useNavigate , Link} from "react-router-dom";
 import {useDispatch} from "react-redux"
-// import {URL} from "../../constants/backend"
+import {backendUrl} from "../../backend";
 
 import {loadingActions} from "../../store/loadingSlice"
 import {userActions} from "../../store/userSlice"
@@ -83,7 +83,7 @@ const Login=()=>{
 
             dispatch(loadingActions.showLoading())
 
-            const res = await axios.post("http://localhost:5000/user/login",{
+            const res = await axios.post(`${backendUrl}/user/login`,{
                 email,
                 password,
             });

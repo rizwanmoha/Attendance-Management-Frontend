@@ -30,7 +30,7 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const role = localStorage.getItem('role');
-  const user = useSelector(state => state.user.user.token);
+  // const user = useSelector(state => state.user.user.token);
   
   // const getUserData = async () => {
   //   try{
