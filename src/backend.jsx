@@ -1,1 +1,1 @@
-export const backendUrl = "http://localhost:5000"
+export const backendUrl = "https://attendance-management-backend-1-f1ck.onrender.com"
